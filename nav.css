@@ -1,0 +1,525 @@
+* {
+    font-family: "Inter", sans-serif;
+    font-weightfont-weight: 300;
+}
+
+/* =====================================================
+   WIRELAB — TYPOGRAPHY
+===================================================== */
+h1 {
+    font-size: 28px;
+    font-weightfont-weight: 300;}
+h2 {
+    font-size: 22px;
+    font-weightfont-weight: 300;}
+h3 {
+    font-size: 18px;
+    font-weightfont-weight: 300;}
+body {
+    font-size: 14px;
+    font-weightfont-weight: 300;}
+/* =====================================================
+   WIRELAB — DARK THEME
+===================================================== */
+:root {
+--wire-bg: #0F1113;
+
+--wire-text: #2a2c2d;
+--wire-text-muted: #8B9197;
+--wire-text-bright: #F1F3F5;
+
+--wire-border: #e177dd;
+--wire-border-accent: #38f709;
+
+--wire-hover: #25292E;
+--wire-hover-surface: rgba(24, 69, 81, 0.648);
+--wire-active: #30343A;
+
+--wire-accent: #79b994;
+--wire-shadow: #ff1313;
+
+--wire-shadow: rgba(0, 0, 0, 0.35);
+--wire-popup-window-bg: rgba(25, 27, 30, 0.97);
+    
+}
+/* =====================================================
+   LIGHT THEME
+===================================================== */
+[data-theme="light"] {
+--wire-bg: #bbb7ac;
+
+--wire-text: #1b1f1a;
+--wire-text-muted: #100e0e;
+--wire-text-bright: #000000;
+
+--wire-border: #b9a76c;
+--wire-border-accent: #76a1cd;
+
+--wire-hover: #e3eae2;
+--wire-hover-surface: #bbb7ac;
+--wire-active: #bbb7ac;
+
+--wire-accent: #c9c5ba;
+
+--wire-shadow: rgb(100, 102, 74);
+--wire-popup-window-bg: rgba(159, 156, 150, 0.75);
+}
+/* -- TEST ANSWER COLORS -- */
+.answer-choice.correct {
+    border-color: rgba(80, 220, 120, 0.85);
+    box-shadow: 0 0 8px rgba(80, 220, 120, 0.20);
+}
+.answer-choice.incorrect {
+    border-color: rgba(230, 70, 70, 0.55);
+    box-shadow: 0 0 8px rgba(230, 70, 70, 0.12);
+}
+
+
+/* =====================================================
+   WIRELAB — GLOBAL NAVIGATION
+===================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =====================================================
+   GLOBAL BODY
+===================================================== */
+body {
+    margin: 0;
+    padding-top: 50px;
+    overflow-y: scroll; /* this fixed the shifting pages */
+    background-color: var(--wire-bg);
+    background-image: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--wire-text);
+}
+
+
+/* =====================================================
+   GLOBAL CONTENT CONTAINERS - consistent outer boundary?
+===================================================== */
+main,
+.page-width {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 12px;
+    padding-right: 12px;
+    box-sizing: border-box;
+}
+
+/* =====================================================
+  SITE HEADER & OUTER GLOW
+===================================================== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0px 0;
+    z-index: 9999;
+    background: transparent;
+    pointer-events: none;
+    filter: drop-shadow(0 0 5px rgb(0, 0, 0));
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+.navbar {
+    width: 100%;
+    max-width: none;
+    height: 34px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 0;
+
+    margin: 0 auto;
+    padding: 0 9px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    border-bottom: 1px solid var(--wire-border);
+    background: var(--wire-bg);
+
+    pointer-events: auto;
+    overflow: visible;
+}
+
+
+/* =====================================================
+   NAV MENU BUTTON
+===================================================== */
+
+.nav-menu-button {
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 4px;
+
+    color: var(--wire-text-muted);
+
+    font-size: 16px;
+    line-height: 0;
+
+    cursor: pointer;
+
+    transform: translateX(-4px);
+}
+
+.nav-menu-button:hover {
+    background: var(--wire-hover-surface);
+    border-radius: 6px;
+}
+
+.nav-menu-container:hover {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+
+/* =====================================================
+   NAV MENU CONTAINER
+===================================================== */
+.nav-menu-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+}
+
+
+/* =====================================================
+   NAV MENU PANEL
+===================================================== */
+
+.nav-menu-panel {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    left: 0;
+
+    display: none;
+    flex-direction: column;
+
+    min-width: 180px;
+    padding: 8px;
+
+    background: var(--wire-popup-window-bg);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+
+    z-index: 1000;
+}
+
+.nav-menu-panel.open {
+    display: flex;
+}
+
+
+/* =====================================================
+   NAV MENU ITEMS
+===================================================== */
+
+.nav-menu-item {
+    display: block;
+
+    padding: 10px 12px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weightfont-weight: 300;
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    white-space: nowrap;
+}
+
+.nav-menu-item:hover {
+    color: var(--wire-text-bright);
+    border-color: var(--wire-border-accent);
+    background: var(--wire-hover);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   NAVBAR PROFILE AVATAR
+===================================================== */
+.nav-pro-avatar-frame {
+    width: 29px;
+    height: 29px;
+    transform: translate(-1px, 2px);
+    margin-left: 10px;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-pro-avatar-frame:hover {
+    background: var(--wire-hover);
+    border-color: var(--wire-accent);
+    border-radius: 4px;
+}
+
+.wirelab-stencil-logo img {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+    margin-left: 7px;
+    opacity: 0.5;
+}
+
+@media (max-width: 600px) {
+    .wirelab-stencil-logo img {
+        width: 20px;
+        height: 20px;
+        opacity: 0.5;
+    }
+
+.wirelab-stencil-logo img {
+    transition: opacity 0.2s ease;
+}
+
+.wirelab-stencil-logo:hover img {
+    opacity: 1;
+}
+}
+
+
+/* =====================================================
+   NAV BUTTONS
+===================================================== */
+.nav-button {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    min-width: 44px;
+    height: 24px;
+
+    padding: 0 8px;
+
+    color: var(--wire-text-muted);
+    text-decoration: none;
+
+    font-size: 10px;
+    letter-spacing: 0.8px;
+
+    white-space: nowrap;
+    text-align: center;
+
+    background: transparent;
+
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.15s ease,
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+
+
+/* =====================================================
+   NAV BUTTONS HOVER
+===================================================== */
+.nav-button:hover {
+    color: var(--wire-text-bright);
+    background: var(--wire-hover);
+    border-color: var(--wire-text-bright);
+}
+
+/* =====================================================
+   NAV BUTTONS ACTIVE
+===================================================== */
+.nav-button.active {
+    color: var(--wire-text-bright);
+    background: var(--wire-active);
+    border-color: var(--wire-accent);
+}
+
+/* =====================================================
+   NAVIGATION NAVBAR
+===================================================== */
+.site-navigation {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 0px;
+    margin-left: auto; /* keeps logo + bulb locked and links centered */
+    margin-right: auto; /* keeps logo + bulb locked and links centered */
+    overflow: visible;
+}
+
+
+/* =====================================================
+   NAV SEPARATOR
+===================================================== */
+.nav-button:not(:last-child)::before {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+/* =====================================================
+SETTINGS BUTTON
+===================================================== */
+.settings-button {
+    width: 25px;
+    height: 25px;
+    margin-left: 2px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--wire-text-muted);
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.settings-button:hover {
+     background-color: var(--wire-hover-surface);
+}
+
+
+/* - - SETTINGS MENU - - */
+.settings-button-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.settings-button-panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    display: none;
+    flex-direction: column;
+    min-width: 180px;
+    padding: 8px;
+    background: var(--wire-popup-window-bg);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    z-index: 1000;
+}
+
+.settings-button-panel.open {
+    display: flex;
+}
+
+.settings-button-item {
+    display: block;
+    padding: 10px 12px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weightfont-weight: 300;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.settings-button-item:hover {
+    color: var(--wire-text-bright);
+    border-color: var(--wire-border-accent);
+    background: var(--wire-hover);
+}
+
+
+/* =====================================================
+   THEME TOGGLE
+===================================================== */
+.theme-toggle-button {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    margin-right: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: transparent;
+    color: var(--wire-accent-bright);
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.theme-toggle-button:hover {
+    background: var(--wire-hover-surface);
+   
+}
+
+
+
+
+
+
+
+
+

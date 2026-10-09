@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wirelab</title>
+<link rel="stylesheet" href="../nav.css">
+<link rel="stylesheet" href="test.css">
+<link rel="icon" type="image/webp" href="z-images/profile-icons/icon-03.webp">
+</head>
+
+<body>
+</head>
+
+<body>
+<header class="site-header">
+<div class="navbar">
+    <div class="nav-menu-container">
+        <button
+            type="button"
+            class="nav-button nav-menu-button"
+            id="nav-menu-button"
+            aria-label="Open Nav Menu"
+            title="Nav Menu">
+            ☰
+        </button>
+
+        <div class="nav-menu-panel" id="nav-menu-panel">
+            <a href="debug/debug.html" class="nav-menu-item">Debug</a>
+            <a href="tools/tools.html" class="nav-menu-item">Tools</a>
+        </div>
+    </div> <!-- nav-menu-container -->
+
+    <div class="navbar-profile-avatar">
+        <a href="index.html" class="nav-pro-avatar-frame" id="navbar-profile">
+            <img src="z-images/profile-icons/icon-03.webp" alt="Profile">
+        </a>
+    </div> <!-- nav-profile-avatar -->
+
+    <div class="wirelab-stencil-logo">
+        <a href="index.html" class="stencil-logo" id="wirelab-stencil-logo">
+            <img src="z-images/wirelab-stencil-logo.webp" alt="WireLab">
+        </a>
+    </div> <!-- wirelab-stencil-logo -->
+
+    <nav class="site-navigation">
+        <a data-page="home" class="nav-button">HOME</a>
+        <a data-page="study" class="nav-button">STUDY</a>
+        <a data-page="labs" class="nav-button">LABS</a>
+        <a data-page="test" class="nav-button">TEST</a>
+    </nav> <!-- site-navigation -->
+
+        <button
+            type="button"
+            class="theme-toggle-button"
+            id="theme-toggle-button"
+            aria-label="Switch to light theme"
+            title="Switch theme"> 💡 
+        </button>
+
+    <div class="settings-button-container">
+        <button
+            type="button"
+            class="settings-button"
+            id="settings-button"
+            aria-label="Settings"
+            title="Settings">
+            ⚙
+        </button>
+
+        <div class="settings-button-panel" id="settings-button-panel">
+            <a href="settings/settings.html" class="settings-button-item">Settings</a>
+        </div>
+    </div> <!--- settings-button-container -->
+
+</div> <!-- navbar -->
+
+</header>
+
+<main class="test-content page-width">
+    <!-- =================================================
+         PAGE INTRODUCTION
+    ================================================== -->
+    <section class="test-intro">
+        <h2></h2>
+        <p></p>
+    </section>
+
+    <!-- =================================================
+         TEST CARDS
+    ================================================== -->
+    <section class="test-grid">
+
+        <!-- =============================================
+             MAIN TEST CARD
+        ============================================== -->
+        <article class="test-card test-card-main">
+            <div class="test-card-header">
+                <span class="card-label">
+                    KNOWLEDGE TEST
+                </span>
+                <h3>
+                    Electrical Fundamentals
+                </h3>
+                <p>
+                    Random questions covering electrical topics.
+                </p>
+            </div>
+
+            <!-- =========================================
+                 TEST AREA
+            ========================================== -->
+            <div
+                id="testArea"
+                class="test-area"
+            >
+                <div
+                    id="testStart"
+                    class="test-start"
+                >
+                    <h4>
+                        Ready to Test Your Knowledge?
+                    </h4>
+                    <p>
+                        Answer questions to build your
+                        electrical knowledge progress.
+                    </p>
+                    <button
+                        id="startTestButton"
+                        type="button"
+                        class="test-button"
+                    >
+                        START TEST
+                    </button>
+                </div>
+
+                <!-- =====================================
+                     QUESTION AREA
+                ====================================== -->
+                <div
+                    id="questionArea"
+                    class="question-area"
+                    hidden
+                >
+                    <div class="question-progress">
+                        <span id="questionNumber">
+                            QUESTION 1
+                        </span>
+                        <span id="questionCategory">
+                            SAFETY
+                        </span>
+                    </div>
+                    <div class="progress-track">
+                        <div
+                            id="progressBar"
+                            class="progress-bar"
+                        ></div>
+                    </div>
+                    <h4 id="questionText">
+                        Question text
+                    </h4>
+                    <div
+                        id="answerChoices"
+                        class="answer-choices"
+                    >
+                    </div>
+                    <div
+                        id="answerFeedback"
+                        class="answer-feedback"
+                    >
+                    </div>
+                    <button
+                        id="nextQuestionButton"
+                        type="button"
+                        class="test-button"
+                        hidden
+                    >
+                        NEXT QUESTION
+                    </button>
+                </div>
+
+                <!-- =====================================
+                     TEST COMPLETE
+                ====================================== -->
+                <div
+                    id="testComplete"
+                    class="test-complete"
+                    hidden
+                >
+                    <h4>
+                        TEST COMPLETE
+                    </h4>
+                    <p id="finalScore">
+                        Score
+                    </p>
+                    <button
+                        id="continueTestButton"
+                        type="button"
+                        class="test-button"
+                    >
+                        CONTINUE
+                    </button>
+                </div>
+            </div>
+
+            <!-- =========================================
+                 PROGRESS INFORMATION
+            ========================================== -->
+            <div class="test-progress">
+                <div>
+                    <span>
+                        QUESTIONS COMPLETED
+                    </span>
+                    <strong id="completedCount">
+                        0
+                    </strong>
+                </div>
+                <div>
+                    <span>
+                        CORRECT
+                    </span>
+                    <strong id="correctCount">
+                        0
+                    </strong>
+                </div>
+                <div>
+                    <span>
+                        ACCURACY
+                    </span>
+                    <strong id="accuracyPercent">
+                        0%
+                    </strong>
+                </div>
+            </div>
+
+            <!-- =========================================
+                 RESET
+            ========================================== -->
+            <button
+                id="resetProgressButton"
+                type="button"
+                class="reset-button"
+            >
+                RESET PROGRESS
+            </button>
+        </article>
+
+        <!-- =============================================
+             FUTURE CARD
+        ============================================== -->
+        <article class="test-card test-card-medium">
+            <span class="card-label">
+                COMING SOON
+            </span>
+            <h3>
+                Code & Installation
+            </h3>
+            <p>
+                Test your knowledge of electrical
+                installation and NEC concepts.
+            </p>
+        </article>
+
+        <!-- =============================================
+             FUTURE CARD
+        ============================================== -->
+        <article class="test-card test-card-small">
+            <span class="card-label">
+                COMING SOON
+            </span>
+            <h3>
+                Equipment & Machines
+            </h3>
+            <p>
+                Motors, transformers, heating equipment,
+                and electrical machines.
+            </p>
+        </article>
+
+        <!-- =============================================
+             FUTURE CARD
+        ============================================== -->
+        <article class="test-card test-card-small">
+            <span class="card-label">
+                COMING SOON
+            </span>
+            <h3>
+                Troubleshooting
+            </h3>
+            <p>
+                Diagnose electrical problems using
+                real-world troubleshooting scenarios.
+            </p>
+        </article>
+    </section>
+</main>
+
+<script src="../nav.js"></script>
+<script src="test.js"></script>
+
+</body>
+</html>
